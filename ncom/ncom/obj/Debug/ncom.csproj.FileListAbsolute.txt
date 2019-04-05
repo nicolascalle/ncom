@@ -1,1 +1,2 @@
 C:\Users\calle\Desktop\ncom\ncom\bin\Debug\ncom.exe.config
+C:\Users\calle\Desktop\ncom\ncom\ncom\bin\Debug\ncom.exe.config
