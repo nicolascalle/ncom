@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using ncom.model;
 
 namespace ncom {
-    public partial class inicio : Form {
+    public partial class Conversor : Form {
 
-        public inicio() { InitializeComponent(); }
+        public Conversor() { InitializeComponent(); }
 
         private void binomicaAPolar_Click(object sender, EventArgs e) {
             double realIngresado = Convert.ToDouble(parteReal.Text.ToString());
@@ -28,7 +28,7 @@ namespace ncom {
             double moduloIngresado = Convert.ToDouble(modulo.Text.ToString());
             double argumentoIngresado = Convert.ToDouble(argumento.Text.ToString());
 
-            ComplejoBinomica numeroBinomico = (ComplejoBinomica)new ComplejoBinomica(moduloIngresado, argumentoIngresado).ToBinomica();
+            ComplejoBinomica numeroBinomico = (ComplejoBinomica)new ComplejoPolar(moduloIngresado, argumentoIngresado).ToBinomica();
 
             string resultado = "( " + numeroBinomico.Real + " , " + numeroBinomico.Imaginaria + " )";
             MessageBox.Show(resultado);

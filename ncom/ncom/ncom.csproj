@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="model\ComplejoBinomica.cs" />
     <Compile Include="model\ComplejoPolar.cs" />
-    <Compile Include="model\EDT.cs" />
     <Compile Include="ui\Conversor.cs">
       <SubType>Form</SubType>
     </Compile>

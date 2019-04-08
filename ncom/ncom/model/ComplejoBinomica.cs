@@ -27,6 +27,18 @@ namespace ncom.model {
             return new ComplejoPolar(modulo, argumento);
         }
 
+        public NumeroComplejo Sumar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+
+        public NumeroComplejo Restar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+
+        public NumeroComplejo Multiplicar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+
+        public NumeroComplejo Dividir(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+
+        public NumeroComplejo Potencia(int potencia) { throw new NotImplementedException(); }
+
+        public List<NumeroComplejo> Raiz(int indice) { throw new NotImplementedException(); }
+
         private double CalcularModulo() {
             return Math.Sqrt( Math.Pow(real, 2) + Math.Pow(imaginaria, 2) );
         }

@@ -26,5 +26,18 @@ namespace ncom.model {
         public NumeroComplejo ToPolar() {
             return this;
         }
+
+        public NumeroComplejo Sumar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+
+        public NumeroComplejo Restar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+
+        public NumeroComplejo Multiplicar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+
+        public NumeroComplejo Dividir(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+
+        public NumeroComplejo Potencia(int potencia) { throw new NotImplementedException(); }
+
+        public List<NumeroComplejo> Raiz(int indice) { throw new NotImplementedException(); }
+
     }
 }

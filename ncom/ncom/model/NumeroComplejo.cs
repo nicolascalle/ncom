@@ -8,5 +8,11 @@ namespace ncom {
     interface NumeroComplejo {
         NumeroComplejo ToBinomica();
         NumeroComplejo ToPolar();
+        NumeroComplejo Sumar(NumeroComplejo otroComplejo);
+        NumeroComplejo Restar(NumeroComplejo otroComplejo);
+        NumeroComplejo Multiplicar(NumeroComplejo otroComplejo);
+        NumeroComplejo Dividir(NumeroComplejo otroComplejo);
+        NumeroComplejo Potencia(int potencia);
+        List<NumeroComplejo> Raiz(int indice);
     }
 }

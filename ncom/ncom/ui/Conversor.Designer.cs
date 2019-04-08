@@ -1,6 +1,6 @@
 ﻿namespace ncom
 {
-    partial class inicio
+    partial class Conversor
     {
         /// <summary>
         /// Variable del diseñador requerida.
