@@ -4,16 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ncom
-{
-    static class Program
-    {
-        /// <summary>
-        /// Punto de entrada principal para la aplicación.
-        /// </summary>
+namespace ncom {
+    static class Program {
         [STAThread]
-        static void Main()
-        {
+        static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new inicio());

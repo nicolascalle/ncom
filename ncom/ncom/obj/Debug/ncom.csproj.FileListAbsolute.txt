@@ -1,1 +1,11 @@
 C:\Users\calle\Desktop\ncom\ncom\bin\Debug\ncom.exe.config
+C:\Users\agust\workspace\ncom\ncom\ncom\bin\Debug\ncom.exe.config
+C:\Users\agust\workspace\ncom\ncom\ncom\bin\Debug\ncom.exe
+C:\Users\agust\workspace\ncom\ncom\ncom\bin\Debug\ncom.pdb
+C:\Users\agust\workspace\ncom\ncom\ncom\obj\Debug\ncom.csprojAssemblyReference.cache
+C:\Users\agust\workspace\ncom\ncom\ncom\obj\Debug\ncom.inicio.resources
+C:\Users\agust\workspace\ncom\ncom\ncom\obj\Debug\ncom.Properties.Resources.resources
+C:\Users\agust\workspace\ncom\ncom\ncom\obj\Debug\ncom.csproj.GenerateResource.cache
+C:\Users\agust\workspace\ncom\ncom\ncom\obj\Debug\ncom.csproj.CoreCompileInputs.cache
+C:\Users\agust\workspace\ncom\ncom\ncom\obj\Debug\ncom.exe
+C:\Users\agust\workspace\ncom\ncom\ncom\obj\Debug\ncom.pdb
