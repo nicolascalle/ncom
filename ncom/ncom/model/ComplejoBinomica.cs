@@ -44,40 +44,7 @@ namespace ncom.model {
         }
 
         private double CalcularArgumento() {
-            double argumento;
-            if (real == 0) {
-                if (imaginaria > 0) {
-                    return 0;
-                }
-                return Math.PI;
-            }
-            argumento = Math.Atan2(imaginaria, real);
-            return argumento + CorreccionAngulo();
+            return Math.Atan2(imaginaria,real);       
         }
-
-        private double CorreccionAngulo() {
-            if (tercerCuadrante() || segundoCuadrante()) {
-                return Math.PI;
-            }
-            if (cuartoCuadrante()) {
-                return 2 * Math.PI;
-            }
-            else {
-                return 0;
-            }
-        }
-
-        private bool segundoCuadrante() {
-            return real < 0 && imaginaria > 0;
-        }
-
-        private bool tercerCuadrante() {
-            return real < 0 && imaginaria < 0;
-        }
-
-        private bool cuartoCuadrante() {
-            return real > 0 && imaginaria < 0;
-        }
-
     }
 }
