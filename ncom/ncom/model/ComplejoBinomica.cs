@@ -9,12 +9,14 @@ namespace ncom.model {
         private double real { get; set; }
         private double imaginaria { get; set; }
 
-        public double Real { get { return real; } set { real = value; } }
-        public double Imaginaria { get { return imaginaria; } set { imaginaria = value; } }
+        public double GetReal() { return real; }
+        public double GetImaginaria() { return imaginaria; }
+        public void SetReal(double real) { this.real = real; }
+        public void SetImaginaria(double imaginaria) { this.imaginaria = imaginaria; }
 
         public ComplejoBinomica(double real, double imaginaria) {
-            Real = real;
-            Imaginaria = imaginaria;
+            this.real = real;
+            this.imaginaria = imaginaria;
         }
 
         public NumeroComplejo ToBinomica() {

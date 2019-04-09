@@ -20,7 +20,7 @@ namespace ncom {
 
             ComplejoPolar numeroPolar = (ComplejoPolar)new ComplejoBinomica(realIngresado, imaginarioIngresado).ToPolar();
 
-            string resultado = "[ " + numeroPolar.Modulo + " ; " + numeroPolar.Argumento + " ]";
+            string resultado = "[ " + numeroPolar.GetModulo() + " ; " + numeroPolar.GetArgumento() + " ]";
             MessageBox.Show(resultado);
         }
 
@@ -30,7 +30,7 @@ namespace ncom {
 
             ComplejoBinomica numeroBinomico = (ComplejoBinomica)new ComplejoPolar(moduloIngresado, argumentoIngresado).ToBinomica();
 
-            string resultado = "( " + numeroBinomico.Real + " , " + numeroBinomico.Imaginaria + " )";
+            string resultado = "( " + numeroBinomico.GetReal() + " , " + numeroBinomico.GetImaginaria() + " )";
             MessageBox.Show(resultado);
         }
 
