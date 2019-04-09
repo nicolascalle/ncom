@@ -9,8 +9,8 @@ namespace ncom.model {
         private double modulo;
         private double argumento;
 
-        public double Modulo { get => modulo; set => modulo = value; }
-        public double Argumento { get => argumento; set => argumento = value; }
+        public double Modulo { get { return modulo; } set { modulo = value; } }
+        public double Argumento { get { return argumento; } set { argumento = value; } }
 
         public ComplejoPolar(double modulo, double argumento) {
             Modulo = modulo;

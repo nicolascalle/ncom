@@ -9,8 +9,8 @@ namespace ncom.model {
         private double real { get; set; }
         private double imaginaria { get; set; }
 
-        public double Real { get => real; set => real = value; }
-        public double Imaginaria { get => imaginaria; set => imaginaria = value; }
+        public double Real { get { return real; } set { real = value; } }
+        public double Imaginaria { get { return imaginaria; } set { imaginaria = value; } }
 
         public ComplejoBinomica(double real, double imaginaria) {
             Real = real;
