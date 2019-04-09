@@ -16,16 +16,16 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
+ncom/[Dd]ebug/
+ncom/[Dd]ebugPublic/
+ncom/[Rr]elease/
+ncom/[Rr]eleases/
+ncom/x64/
+ncom/x86/
+ncom/bld/
+ncom/[Bb]in/
+ncom/[Oo]bj/
+ncom/[Ll]og/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
