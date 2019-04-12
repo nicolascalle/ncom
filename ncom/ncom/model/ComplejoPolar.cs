@@ -9,12 +9,14 @@ namespace ncom.model {
         private double modulo;
         private double argumento;
 
-        public double Modulo { get { return modulo; } set { modulo = value; } }
-        public double Argumento { get { return argumento; } set { argumento = value; } }
+        public double GetModulo() { return modulo; }
+        public double GetArgumento() { return argumento; }
+        public void SetModulo(double modulo) { this.modulo = modulo; }
+        public void SetArgumento(double argumento) { this.argumento = argumento; }
 
         public ComplejoPolar(double modulo, double argumento) {
-            Modulo = modulo;
-            Argumento = argumento;
+            this.modulo = modulo;
+            this.argumento = argumento;
         }
 
         public NumeroComplejo ToBinomica() {

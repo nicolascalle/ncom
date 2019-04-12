@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ncom.model {
-    class ComplejoBinomica : NumeroComplejo
-    {
+    class ComplejoBinomica : NumeroComplejo {
         private double real;
         private double imaginaria;
 
@@ -20,8 +19,7 @@ namespace ncom.model {
             this.imaginaria = imaginaria;
         }
 
-        public NumeroComplejo ToBinomica()
-        {
+        public NumeroComplejo ToBinomica() {
             return this;
         }
 
