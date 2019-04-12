@@ -18,8 +18,8 @@ namespace ncom.model {
         }
 
         public NumeroComplejo ToBinomica() {
-            double real = modulo * Math.Cos(argumento);
-            double imaginaria = modulo * Math.Sin(argumento);
+            double real = Math.Round(modulo * Math.Cos(argumento),3);
+            double imaginaria = Math.Round(modulo * Math.Sin(argumento),3);
             return new ComplejoBinomica(real, imaginaria);
         }
 

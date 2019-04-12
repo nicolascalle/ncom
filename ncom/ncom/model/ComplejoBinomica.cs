@@ -5,23 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ncom.model {
-    class ComplejoBinomica : NumeroComplejo {
-        private double real { get; set; }
-        private double imaginaria { get; set; }
+    class ComplejoBinomica : NumeroComplejo
+    {
+        /*private double real;
+        private double imaginaria;*/
 
-        public double Real { get { return real; } set { real = value; } }
-        public double Imaginaria { get { return imaginaria; } set { imaginaria = value; } }
+        public double Real { get; set; }
+        public double Imaginaria { get; set; }
 
-        public ComplejoBinomica(double real, double imaginaria) {
+        public ComplejoBinomica(double real, double imaginaria)
+        {
             Real = real;
             Imaginaria = imaginaria;
         }
 
-        public NumeroComplejo ToBinomica() {
+        public NumeroComplejo ToBinomica()
+        {
             return this;
         }
 
-        public NumeroComplejo ToPolar() {
+        public NumeroComplejo ToPolar()
+        {
             double modulo = this.CalcularModulo();
             double argumento = this.CalcularArgumento();
             return new ComplejoPolar(modulo, argumento);
@@ -39,12 +43,38 @@ namespace ncom.model {
 
         public List<NumeroComplejo> Raiz(int indice) { throw new NotImplementedException(); }
 
-        private double CalcularModulo() {
-            return Math.Sqrt( Math.Pow(real, 2) + Math.Pow(imaginaria, 2) );
+        private double CalcularModulo()
+        {
+            return Math.Round(Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginaria, 2)), 3);
         }
 
-        private double CalcularArgumento() {
-            return Math.Atan2(imaginaria,real);       
+        private double CalcularArgumento()
+        {
+            double argumento = Math.Atan2(Imaginaria, Real);
+
+            return Math.Round(argumento + CorregirArgumento(), 3);
+        }
+
+        private double CorregirArgumento()
+        {
+            if (TercerCuadrante() || CuartoCuadrante())
+            {
+                return Math.PI * 2;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private bool TercerCuadrante()
+        {
+            return Real < 0 && Imaginaria < 0;
+        }
+
+        private bool CuartoCuadrante()
+        {
+            return Real > 0 && Imaginaria < 0;
         }
     }
 }
