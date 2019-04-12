@@ -14,8 +14,7 @@ namespace ncom.model {
         public void SetModulo(double modulo) { this.modulo = modulo; }
         public void SetArgumento(double argumento) { this.argumento = argumento; }
 
-        public ComplejoPolar(double modulo, double argumento)
-        {
+        public ComplejoPolar(double modulo, double argumento) {
             this.modulo = modulo;
             this.argumento = argumento;
         }
