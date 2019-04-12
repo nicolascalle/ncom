@@ -23,25 +23,42 @@ namespace ncom.model {
             this.imaginaria = imaginaria;
         }
 
-        public NumeroComplejo ToBinomica()
+        public ComplejoBinomica ToBinomica()
         {
             return this;
         }
 
-        public NumeroComplejo ToPolar()
+        public ComplejoPolar ToPolar()
         {
             double modulo = this.CalcularModulo();
             double argumento = this.CalcularArgumento();
             return new ComplejoPolar(modulo, argumento);
         }
 
-        public NumeroComplejo Sumar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+        public NumeroComplejo Sumar(ComplejoBinomica complejo) { 
+            return new ComplejoBinomica(complejo.GetReal() + this.real, complejo.GetImaginaria() + this.imaginaria);
+        }
 
-        public NumeroComplejo Restar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+        public NumeroComplejo Restar(ComplejoBinomica complejo) {
+            return new ComplejoBinomica(complejo.GetReal() - this.real, complejo.GetImaginaria() - this.imaginaria);  
+        }
 
-        public NumeroComplejo Multiplicar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+        public NumeroComplejo Multiplicar(ComplejoBinomica complejo){
+            ComplejoPolar polar1 = complejo.ToPolar();
+            ComplejoPolar polar2 = this.ToPolar();
 
-        public NumeroComplejo Dividir(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+            NumeroComplejo productoPolar = polar2.Multiplicar(polar1);
+            return productoPolar.ToBinomica();
+        }
+
+        public NumeroComplejo Dividir(ComplejoBinomica complejo){
+            ComplejoPolar polar1 = complejo.ToPolar();
+            ComplejoPolar polar2 = this.ToPolar();
+
+            NumeroComplejo cocientePolar = polar2.Dividir(polar1);
+
+            return cocientePolar.ToBinomica();
+        }
 
         public NumeroComplejo Potencia(int potencia) { throw new NotImplementedException(); }
 
