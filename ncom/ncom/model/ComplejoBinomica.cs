@@ -10,13 +10,14 @@ namespace ncom.model {
         private double real;
         private double imaginaria;
 
-        public double Real { get { return real; } set { real = value; } }
-        public double Imaginaria { get { return imaginaria; } set { imaginaria = value; } }
+        public double GetReal() { return real; }
+        public double GetImaginaria() { return imaginaria; }
+        public void SetReal(double real) { this.real = real; }
+        public void SetImaginaria(double imaginaria) { this.imaginaria = imaginaria; }
 
-        public ComplejoBinomica(double real, double imaginaria)
-        {
-            Real = real;
-            Imaginaria = imaginaria;
+        public ComplejoBinomica(double real, double imaginaria) {
+            this.real = real;
+            this.imaginaria = imaginaria;
         }
 
         public NumeroComplejo ToBinomica()
@@ -45,7 +46,7 @@ namespace ncom.model {
 
         private double CalcularModulo()
         {
-            return Math.Round(Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginaria, 2)), 3);
+            return Math.Round(Math.Sqrt(Math.Pow(real, 2) + Math.Pow(imaginaria, 2)), 3);
         }
 
         private double CalcularArgumento()
