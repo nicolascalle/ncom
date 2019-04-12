@@ -10,21 +10,23 @@ namespace ncom.model {
         private double real;
         private double imaginaria;
 
-
         public double GetReal() { return real; }
         public double GetImaginaria() { return imaginaria; }
         public void SetReal(double real) { this.real = real; }
         public void SetImaginaria(double imaginaria) { this.imaginaria = imaginaria; }
 
 
-        public ComplejoBinomica(double real, double imaginaria)
-        {
+        public ComplejoBinomica(double real, double imaginaria) {
             this.real = real;
             this.imaginaria = imaginaria;
         }
 
+<<<<<<< HEAD
         public ComplejoBinomica ToBinomica()
         {
+=======
+        public NumeroComplejo ToBinomica() {
+>>>>>>> d58987b9b72df4c90da4916a0ccb6eb0414b75dc
             return this;
         }
 
