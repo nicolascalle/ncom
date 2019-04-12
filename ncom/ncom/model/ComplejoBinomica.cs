@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace ncom.model {
     class ComplejoBinomica : NumeroComplejo
     {
-        /*private double real;
-        private double imaginaria;*/
+        private double real;
+        private double imaginaria;
 
-        public double Real { get; set; }
-        public double Imaginaria { get; set; }
+        public double Real { get { return real; } set { real = value; } }
+        public double Imaginaria { get { return imaginaria; } set { imaginaria = value; } }
 
         public ComplejoBinomica(double real, double imaginaria)
         {
@@ -50,7 +50,7 @@ namespace ncom.model {
 
         private double CalcularArgumento()
         {
-            double argumento = Math.Atan2(Imaginaria, Real);
+            double argumento = Math.Atan2(imaginaria, real);
 
             return Math.Round(argumento + CorregirArgumento(), 3);
         }
@@ -69,12 +69,12 @@ namespace ncom.model {
 
         private bool TercerCuadrante()
         {
-            return Real < 0 && Imaginaria < 0;
+            return real < 0 && imaginaria < 0;
         }
 
         private bool CuartoCuadrante()
         {
-            return Real > 0 && Imaginaria < 0;
+            return real > 0 && imaginaria < 0;
         }
     }
 }
