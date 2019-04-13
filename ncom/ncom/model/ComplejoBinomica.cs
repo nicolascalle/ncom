@@ -19,12 +19,11 @@ namespace ncom.model {
             this.imaginaria = imaginaria;
         }
 
-        public NumeroComplejo ToBinomica() {
+        public ComplejoBinomica ToBinomica() {
             return this;
         }
 
-        public NumeroComplejo ToPolar()
-        {
+        public ComplejoPolar ToPolar() {
             double modulo = this.CalcularModulo();
             double argumento = this.CalcularArgumento();
             return new ComplejoPolar(modulo, argumento);
@@ -42,38 +41,32 @@ namespace ncom.model {
 
         public List<NumeroComplejo> Raiz(int indice) { throw new NotImplementedException(); }
 
-        private double CalcularModulo()
-        {
+        private double CalcularModulo() {
             return Math.Round(Math.Sqrt(Math.Pow(real, 2) + Math.Pow(imaginaria, 2)), 3);
         }
 
-        private double CalcularArgumento()
-        {
+        private double CalcularArgumento() {
             double argumento = Math.Atan2(imaginaria, real);
 
             return Math.Round(argumento + CorregirArgumento(), 3);
         }
 
-        private double CorregirArgumento()
-        {
-            if (TercerCuadrante() || CuartoCuadrante())
-            {
+        private double CorregirArgumento() {
+            if (TercerCuadrante() || CuartoCuadrante()) {
                 return Math.PI * 2;
             }
-            else
-            {
+            else {
                 return 0;
             }
         }
 
-        private bool TercerCuadrante()
-        {
+        private bool TercerCuadrante() {
             return real < 0 && imaginaria < 0;
         }
 
-        private bool CuartoCuadrante()
-        {
+        private bool CuartoCuadrante() {
             return real > 0 && imaginaria < 0;
         }
+
     }
 }

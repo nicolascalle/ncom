@@ -19,13 +19,13 @@ namespace ncom.model {
             this.argumento = argumento;
         }
 
-        public NumeroComplejo ToBinomica() {
+        public ComplejoBinomica ToBinomica() {
             double real = Math.Round(modulo * Math.Cos(argumento),3);
             double imaginaria = Math.Round(modulo * Math.Sin(argumento),3);
             return new ComplejoBinomica(real, imaginaria);
         }
 
-        public NumeroComplejo ToPolar() {
+        public ComplejoPolar ToPolar() {
             return this;
         }
 
