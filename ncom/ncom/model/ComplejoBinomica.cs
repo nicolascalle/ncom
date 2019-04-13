@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ncom.model {
-    class ComplejoBinomica : NumeroComplejo
-    {
+    class ComplejoBinomica : NumeroComplejo {
         private double real;
         private double imaginaria;
 
@@ -15,37 +14,32 @@ namespace ncom.model {
         public void SetReal(double real) { this.real = real; }
         public void SetImaginaria(double imaginaria) { this.imaginaria = imaginaria; }
 
-
         public ComplejoBinomica(double real, double imaginaria) {
             this.real = real;
             this.imaginaria = imaginaria;
         }
 
-<<<<<<< HEAD
-        public ComplejoBinomica ToBinomica()
-        {
-=======
-        public NumeroComplejo ToBinomica() {
->>>>>>> d58987b9b72df4c90da4916a0ccb6eb0414b75dc
+        public ComplejoBinomica ToBinomica() {
             return this;
         }
 
-        public ComplejoPolar ToPolar()
-        {
+        public ComplejoPolar ToPolar() {
             double modulo = this.CalcularModulo();
             double argumento = this.CalcularArgumento();
             return new ComplejoPolar(modulo, argumento);
         }
 
-        public NumeroComplejo Sumar(ComplejoBinomica complejo) { 
-            return new ComplejoBinomica(complejo.GetReal() + this.real, complejo.GetImaginaria() + this.imaginaria);
+        public NumeroComplejo Sumar(NumeroComplejo complejo) {
+            ComplejoBinomica complejoBinomica = complejo.ToBinomica();
+            return new ComplejoBinomica(complejoBinomica.GetReal() + this.real, complejoBinomica.GetImaginaria() + this.imaginaria);
         }
 
-        public NumeroComplejo Restar(ComplejoBinomica complejo) {
-            return new ComplejoBinomica(complejo.GetReal() - this.real, complejo.GetImaginaria() - this.imaginaria);  
+        public NumeroComplejo Restar(NumeroComplejo complejo) {
+            ComplejoBinomica complejoBinomica = complejo.ToBinomica();
+            return new ComplejoBinomica(complejoBinomica.GetReal() - this.real, complejoBinomica.GetImaginaria() - this.imaginaria);  
         }
 
-        public NumeroComplejo Multiplicar(ComplejoBinomica complejo){
+        public NumeroComplejo Multiplicar(NumeroComplejo complejo) {
             ComplejoPolar polar1 = complejo.ToPolar();
             ComplejoPolar polar2 = this.ToPolar();
 
@@ -53,7 +47,7 @@ namespace ncom.model {
             return productoPolar.ToBinomica();
         }
 
-        public NumeroComplejo Dividir(ComplejoBinomica complejo){
+        public NumeroComplejo Dividir(NumeroComplejo complejo) {
             ComplejoPolar polar1 = complejo.ToPolar();
             ComplejoPolar polar2 = this.ToPolar();
 
@@ -66,38 +60,32 @@ namespace ncom.model {
 
         public List<NumeroComplejo> Raiz(int indice) { throw new NotImplementedException(); }
 
-        private double CalcularModulo()
-        {
+        private double CalcularModulo() {
             return Math.Round(Math.Sqrt(Math.Pow(real, 2) + Math.Pow(imaginaria, 2)), 3);
         }
 
-        private double CalcularArgumento()
-        {
+        private double CalcularArgumento() {
             double argumento = Math.Atan2(imaginaria, real);
 
             return Math.Round(argumento + CorregirArgumento(), 3);
         }
 
-        private double CorregirArgumento()
-        {
-            if (TercerCuadrante() || CuartoCuadrante())
-            {
+        private double CorregirArgumento() {
+            if (TercerCuadrante() || CuartoCuadrante()) {
                 return Math.PI * 2;
             }
-            else
-            {
+            else {
                 return 0;
             }
         }
 
-        private bool TercerCuadrante()
-        {
+        private bool TercerCuadrante() {
             return real < 0 && imaginaria < 0;
         }
 
-        private bool CuartoCuadrante()
-        {
+        private bool CuartoCuadrante() {
             return real > 0 && imaginaria < 0;
         }
+
     }
 }

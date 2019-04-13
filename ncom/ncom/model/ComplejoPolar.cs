@@ -19,7 +19,6 @@ namespace ncom.model {
             this.argumento = argumento;
         }
 
-
         public ComplejoBinomica ToBinomica() {
             double real = Math.Round(modulo * Math.Cos(argumento),3);
             double imaginaria = Math.Round(modulo * Math.Sin(argumento),3);
@@ -30,7 +29,7 @@ namespace ncom.model {
             return this;
         }
 
-        public NumeroComplejo Sumar(ComplejoPolar complejo) {
+        public NumeroComplejo Sumar(NumeroComplejo complejo) {
             ComplejoBinomica binomico1 = complejo.ToBinomica();
             ComplejoBinomica binomico2 = this.ToBinomica();
 
@@ -38,7 +37,7 @@ namespace ncom.model {
             return sumaBinomica.ToPolar();
         }
 
-        public NumeroComplejo Restar(ComplejoPolar complejo) {
+        public NumeroComplejo Restar(NumeroComplejo complejo) {
             ComplejoBinomica binomico1 = complejo.ToBinomica();
             ComplejoBinomica binomico2 = this.ToBinomica();
 
@@ -46,12 +45,14 @@ namespace ncom.model {
             return restaBinomica.ToPolar();
         }
 
-        public NumeroComplejo Multiplicar(ComplejoPolar complejo) {
-            return new ComplejoBinomica(complejo.GetModulo() * this.modulo, complejo.GetArgumento() + this.argumento);
+        public NumeroComplejo Multiplicar(NumeroComplejo complejo) {
+            ComplejoPolar complejoPolar = complejo.ToPolar();
+            return new ComplejoBinomica(complejoPolar.GetModulo() * this.modulo, complejoPolar.ToPolar().GetArgumento() + this.argumento);
         }
 
-        public NumeroComplejo Dividir(ComplejoPolar complejo) {
-            return new ComplejoBinomica(complejo.GetModulo() / this.modulo, complejo.GetArgumento() - this.argumento);
+        public NumeroComplejo Dividir(NumeroComplejo complejo) {
+            ComplejoPolar complejoPolar = complejo.ToPolar();
+            return new ComplejoBinomica(complejoPolar.GetModulo() / this.modulo, complejoPolar.GetArgumento() - this.argumento);
         }
 
         public NumeroComplejo Potencia(int potencia) { throw new NotImplementedException(); }
