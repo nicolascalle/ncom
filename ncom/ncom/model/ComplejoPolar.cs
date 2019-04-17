@@ -19,23 +19,41 @@ namespace ncom.model {
             this.argumento = argumento;
         }
 
-        public NumeroComplejo ToBinomica() {
+        public ComplejoBinomica ToBinomica() {
             double real = Math.Round(modulo * Math.Cos(argumento),3);
             double imaginaria = Math.Round(modulo * Math.Sin(argumento),3);
             return new ComplejoBinomica(real, imaginaria);
         }
 
-        public NumeroComplejo ToPolar() {
+        public ComplejoPolar ToPolar() {
             return this;
         }
 
-        public NumeroComplejo Sumar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+        public NumeroComplejo Sumar(NumeroComplejo complejo) {
+            ComplejoBinomica binomico1 = complejo.ToBinomica();
+            ComplejoBinomica binomico2 = this.ToBinomica();
 
-        public NumeroComplejo Restar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+            NumeroComplejo sumaBinomica = binomico2.Sumar(binomico1);
+            return sumaBinomica.ToPolar();
+        }
 
-        public NumeroComplejo Multiplicar(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+        public NumeroComplejo Restar(NumeroComplejo complejo) {
+            ComplejoBinomica binomico1 = complejo.ToBinomica();
+            ComplejoBinomica binomico2 = this.ToBinomica();
 
-        public NumeroComplejo Dividir(NumeroComplejo otroComplejo) { throw new NotImplementedException(); }
+            NumeroComplejo restaBinomica = binomico2.Restar(binomico1);
+            return restaBinomica.ToPolar();
+        }
+
+        public NumeroComplejo Multiplicar(NumeroComplejo complejo) {
+            ComplejoPolar complejoPolar = complejo.ToPolar();
+            return new ComplejoBinomica(complejoPolar.GetModulo() * this.modulo, complejoPolar.ToPolar().GetArgumento() + this.argumento);
+        }
+
+        public NumeroComplejo Dividir(NumeroComplejo complejo) {
+            ComplejoPolar complejoPolar = complejo.ToPolar();
+            return new ComplejoBinomica(complejoPolar.GetModulo() / this.modulo, complejoPolar.GetArgumento() - this.argumento);
+        }
 
         public NumeroComplejo Potencia(int potencia) { throw new NotImplementedException(); }
 
