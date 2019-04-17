@@ -14,6 +14,6 @@ namespace ncom {
         NumeroComplejo Multiplicar(NumeroComplejo otroComplejo);
         NumeroComplejo Dividir(NumeroComplejo otroComplejo);
         NumeroComplejo Potencia(int potencia);
-        List<NumeroComplejo> Raiz(int indice);
+        NumeroComplejo[] Raiz(int indice);
     }
 }

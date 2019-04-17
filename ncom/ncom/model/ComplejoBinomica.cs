@@ -63,11 +63,22 @@ namespace ncom.model {
             return  potenciaPolar.ToBinomica();
         }
 
-        public List<NumeroComplejo> Raiz(int indice) { throw new NotImplementedException(); }
+        public NumeroComplejo[] Raiz(int indice) {
+            ComplejoPolar numeroPolar = this.ToPolar();
+            NumeroComplejo[] raicesPolares = numeroPolar.Raiz(indice);
+            NumeroComplejo[] raicesBinomicas = new NumeroComplejo[indice - 1];
+            int k = 0;
+
+            while (k < indice){
+                raicesBinomicas[k] = raicesPolares[k].ToBinomica();
+                k++;
+            }
+            return raicesBinomicas;
+        }
 
 
         private double CalcularModulo() {
-            return Math.Round(Math.Sqrt(Math.Pow(real, 2) + Math.Pow(imaginaria, 2)), 3);
+            return Math.Round( Math.Sqrt( Math.Pow( real, 2 ) + Math.Pow(imaginaria, 2) ), 3 );
         }
 
         private double CalcularArgumento() {
@@ -83,7 +94,6 @@ namespace ncom.model {
                 return 0;
             }
         }
-
 
         private bool TercerCuadrante() {
             return real < 0 && imaginaria < 0;

@@ -58,16 +58,28 @@ namespace ncom.model {
         public NumeroComplejo Potencia(int potencia) {
             double modulo = Math.Pow( this.modulo, potencia );
             double argumento = this.argumento * potencia;
-            return new ComplejoPolar( modulo , corregirArgumento(argumento) );
+            return new ComplejoPolar( modulo , this.corregirArgumento(argumento) );
         }
 
-        private double corregirArgumento(double argumento){
-                // si a alguien se le ocurre un nombre mejor para arg .. Binevenido
-                double arg = Math.Truncate(argumento / 2 * Math.PI);
-                return argumento - arg * 2 * Math.PI ;
+        public NumeroComplejo[] Raiz(int indice) {
+            int k = 0;
+            NumeroComplejo[] raicesComplejas = new NumeroComplejo[indice - 1];
+            while (k < indice){
+                double modulo = Math.Pow( this.modulo, 1 / indice );
+                double argumento = (this.argumento + 2 * k * Math.PI) / indice;
+                raicesComplejas[k] = new ComplejoPolar( modulo, argumento );
+                k++;
+            }
+
+            return raicesComplejas;
         }
 
-        public List<NumeroComplejo> Raiz(int indice) { throw new NotImplementedException(); }
+        private double corregirArgumento(double argumento)
+        {
+            // si a alguien se le ocurre un nombre mejor para arg .. Binevenido
+            double arg = Math.Truncate(argumento / 2 * Math.PI);
+            return argumento - arg * 2 * Math.PI;
+        }
 
     }
 }
