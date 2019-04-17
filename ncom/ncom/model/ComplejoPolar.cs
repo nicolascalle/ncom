@@ -58,7 +58,7 @@ namespace ncom.model {
         public NumeroComplejo Potencia(int potencia) {
             double modulo = Math.Pow( this.modulo, potencia );
             double argumento = this.argumento * potencia;
-            return new ComplejoPolar( modulo , this.corregirArgumento(argumento) );
+            return new ComplejoPolar( modulo , this.CorregirArgumento(argumento) );
         }
 
         public NumeroComplejo[] Raiz(int indice) {
@@ -74,7 +74,7 @@ namespace ncom.model {
             return raicesComplejas;
         }
 
-        private double corregirArgumento(double argumento)
+        private double CorregirArgumento(double argumento)
         {
             // si a alguien se le ocurre un nombre mejor para arg .. Binevenido
             double arg = Math.Truncate(argumento / 2 * Math.PI);
