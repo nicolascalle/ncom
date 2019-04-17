@@ -20,9 +20,9 @@ namespace ncom.model {
         }
 
         public ComplejoBinomica ToBinomica() {
-            double real = Math.Round(modulo * Math.Cos(argumento),3);
-            double imaginaria = Math.Round(modulo * Math.Sin(argumento),3);
-            return new ComplejoBinomica(real, imaginaria);
+            double real = Math.Round( modulo * Math.Cos(argumento), 3 );
+            double imaginaria = Math.Round( modulo * Math.Sin(argumento), 3 );
+            return new ComplejoBinomica( real, imaginaria );
         }
 
         public ComplejoPolar ToPolar() {
@@ -47,15 +47,25 @@ namespace ncom.model {
 
         public NumeroComplejo Multiplicar(NumeroComplejo complejo) {
             ComplejoPolar complejoPolar = complejo.ToPolar();
-            return new ComplejoBinomica(complejoPolar.GetModulo() * this.modulo, complejoPolar.ToPolar().GetArgumento() + this.argumento);
+            return new ComplejoBinomica( complejoPolar.GetModulo() * this.modulo, complejoPolar.ToPolar().GetArgumento() + this.argumento );
         }
 
         public NumeroComplejo Dividir(NumeroComplejo complejo) {
             ComplejoPolar complejoPolar = complejo.ToPolar();
-            return new ComplejoBinomica(complejoPolar.GetModulo() / this.modulo, complejoPolar.GetArgumento() - this.argumento);
+            return new ComplejoBinomica( complejoPolar.GetModulo() / this.modulo, complejoPolar.GetArgumento() - this.argumento );
         }
 
-        public NumeroComplejo Potencia(int potencia) { throw new NotImplementedException(); }
+        public NumeroComplejo Potencia(int potencia) {
+            double modulo = Math.Pow( this.modulo, potencia );
+            double argumento = this.argumento * potencia;
+            return new ComplejoPolar( modulo , corregirArgumento(argumento) );
+        }
+
+        private double corregirArgumento(double argumento){
+                // si a alguien se le ocurre un nombre mejor para arg .. Binevenido
+                double arg = Math.Truncate(argumento / 2 * Math.PI);
+                return argumento - arg * 2 * Math.PI ;
+        }
 
         public List<NumeroComplejo> Raiz(int indice) { throw new NotImplementedException(); }
 

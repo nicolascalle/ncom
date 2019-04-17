@@ -57,7 +57,11 @@ namespace ncom.model {
             return cocientePolar.ToBinomica();
         }
 
-        public NumeroComplejo Potencia(int potencia) { throw new NotImplementedException(); }
+        public NumeroComplejo Potencia(int potencia) {
+            ComplejoPolar numeroPolar = this.ToPolar();
+            NumeroComplejo potenciaPolar = numeroPolar.Potencia(potencia);
+            return  potenciaPolar.ToBinomica();
+        }
 
         public List<NumeroComplejo> Raiz(int indice) { throw new NotImplementedException(); }
 
