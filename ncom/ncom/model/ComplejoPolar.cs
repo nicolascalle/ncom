@@ -19,52 +19,85 @@ namespace ncom.model {
             this.argumento = argumento;
         }
 
+        //PASAJE A BINOMICA
         public ComplejoBinomica ToBinomica() {
-            double real = Math.Round( modulo * Math.Cos(argumento), 3 );
-            double imaginaria = Math.Round( modulo * Math.Sin(argumento), 3 );
+            double real = CalcularNumeroReal(); 
+            double imaginaria = CalcularNumeroImaginario(); 
             return new ComplejoBinomica( real, imaginaria );
         }
 
+        private double CalcularNumeroReal()
+        {
+            return Math.Round(modulo * Math.Cos(argumento), 3); ;
+        }
+
+        private double CalcularNumeroImaginario()
+        {
+            return Math.Round(modulo * Math.Sin(argumento), 3);
+        }
+
+        //PASAJE A POLAR (devuelvo este objeto)
         public ComplejoPolar ToPolar() {
             return this;
         }
 
+
+        //SUMA
         public NumeroComplejo Sumar(NumeroComplejo complejo) {
-            ComplejoBinomica binomico1 = complejo.ToBinomica();
-            ComplejoBinomica binomico2 = this.ToBinomica();
-
-            NumeroComplejo sumaBinomica = binomico2.Sumar(binomico1);
-            return sumaBinomica.ToPolar();
+            //Convierto ambos numero a forma binomica
+            ComplejoBinomica binomico1 = complejo.ToBinomica(); 
+            ComplejoBinomica binomico2 = this.ToBinomica();            
+            NumeroComplejo sumaBinomica = binomico2.Sumar(binomico1);//Sumo en forma binomica  
+            return sumaBinomica.ToPolar();//Devulevo la suma convertida a polar
         }
 
+
+        //RESTA
         public NumeroComplejo Restar(NumeroComplejo complejo) {
+            //Convierto ambos numeros a forma binomica
             ComplejoBinomica binomico1 = complejo.ToBinomica();
             ComplejoBinomica binomico2 = this.ToBinomica();
-
-            NumeroComplejo restaBinomica = binomico2.Restar(binomico1);
-            return restaBinomica.ToPolar();
+            NumeroComplejo restaBinomica = binomico2.Restar(binomico1);   //Resto en forma binomica
+            return restaBinomica.ToPolar();   //Devulevo la suma convertida a polar
         }
 
-        public NumeroComplejo Multiplicar(NumeroComplejo complejo) {
-            ComplejoPolar complejoPolar = complejo.ToPolar();
-            return new ComplejoBinomica( complejoPolar.GetModulo() * this.modulo, complejoPolar.ToPolar().GetArgumento() + this.argumento );
+        
+        //MULTIPLICACION
+        public NumeroComplejo Multiplicar(ComplejoPolar complejo) {
+            double modulo = this.modulo * complejo.GetModulo();
+            double argumento = this.argumento + complejo.GetArgumento();
+            return new ComplejoBinomica( modulo   , argumento);
         }
 
-        public NumeroComplejo Dividir(NumeroComplejo complejo) {
-            ComplejoPolar complejoPolar = complejo.ToPolar();
-            return new ComplejoBinomica( complejoPolar.GetModulo() / this.modulo, complejoPolar.GetArgumento() - this.argumento );
+ 
+        //DIVISION
+        public NumeroComplejo Dividir(ComplejoPolar complejo){
+            double modulo = this.modulo / complejo.GetModulo();
+            double argumento = this.argumento - complejo.GetArgumento();
+            return new ComplejoBinomica( modulo, argumento );
         }
 
+
+        //POTENCIA
         public NumeroComplejo Potencia(int potencia) {
             double modulo = Math.Pow( this.modulo, potencia );
             double argumento = this.argumento * potencia;
             return new ComplejoPolar( modulo , this.CorregirArgumento(argumento) );
         }
 
-        public NumeroComplejo[] Raiz(int indice) {
+        private double CorregirArgumento(double argumento){
+            // si a alguien se le ocurre un nombre mejor para arg .. Binevenido
+            double arg = Math.Truncate(argumento / 2 * Math.PI);
+            return argumento - arg * 2 * Math.PI;
+        }
+
+
+        //RAICES N-ESIMAS
+        public NumeroComplejo[] Raices_n_esimas(int indice) {
             int k = 0;
             NumeroComplejo[] raicesComplejas = new NumeroComplejo[indice - 1];
-            while (k < indice){
+            
+            while (k < indice){  //Calculo cada raiz y las agrego al array.
                 double modulo = Math.Pow( this.modulo, 1 / indice );
                 double argumento = (this.argumento + 2 * k * Math.PI) / indice;
                 raicesComplejas[k] = new ComplejoPolar( modulo, argumento );
@@ -74,12 +107,38 @@ namespace ncom.model {
             return raicesComplejas;
         }
 
-        private double CorregirArgumento(double argumento)
-        {
-            // si a alguien se le ocurre un nombre mejor para arg .. Binevenido
-            double arg = Math.Truncate(argumento / 2 * Math.PI);
-            return argumento - arg * 2 * Math.PI;
+
+        //RAICES PRIMITIVAS
+        public NumeroComplejo[] RaicesPrimitivas(int indice){
+            
+            NumeroComplejo[] raicesNesimas = this.Raices_n_esimas(indice);//Obtengo las raices n-esimas
+
+            NumeroComplejo[] raicesPrimitivas = new NumeroComplejo[indice];
+
+            //La raiz sub0 no es primitiva, no la agrego 
+
+            raicesPrimitivas[0] = raicesNesimas[1]; //La raiz sub 1 siempre es primitiva, la agrego
+            int k = 2, i = 1;
+            while ( k < indice ){    //Recorro las raices n-esimas y me quedo con las primitivas segun MCD
+                if (MCD(k, indice) == 1){
+                    raicesPrimitivas[i] = raicesNesimas[k];
+                    i++;
+                }
+                k++;
+            }
+            return raicesPrimitivas;
         }
 
+        //Calculo MCD
+        private int MCD(int k, int n){ 
+            int resultado;
+            do{
+                resultado = k;
+                k = n % k;
+                n = resultado;
+            } while (k != 0);
+
+            return resultado;
+        }
     }
 }
