@@ -26,13 +26,11 @@ namespace ncom.model {
             return new ComplejoBinomica( real, imaginaria );
         }
 
-        private double CalcularNumeroReal()
-        {
+        private double CalcularNumeroReal() {
             return Math.Round(modulo * Math.Cos(argumento), 3); ;
         }
 
-        private double CalcularNumeroImaginario()
-        {
+        private double CalcularNumeroImaginario() {
             return Math.Round(modulo * Math.Sin(argumento), 3);
         }
 
@@ -41,6 +39,10 @@ namespace ncom.model {
             return this;
         }
 
+        override
+        public string ToString() {
+            return "[ " + modulo + ", " + argumento + " ]";
+        }
 
         //SUMA
         public NumeroComplejo Sumar(NumeroComplejo complejo) {
@@ -63,17 +65,19 @@ namespace ncom.model {
 
         
         //MULTIPLICACION
-        public NumeroComplejo Multiplicar(ComplejoPolar complejo) {
-            double modulo = this.modulo * complejo.GetModulo();
-            double argumento = this.argumento + complejo.GetArgumento();
+        public NumeroComplejo Multiplicar(NumeroComplejo complejo) {
+            ComplejoPolar complejoPolar = complejo.ToPolar();
+            double modulo = this.modulo * complejoPolar.GetModulo();
+            double argumento = this.argumento + complejoPolar.GetArgumento();
             return new ComplejoBinomica( modulo   , argumento);
         }
 
  
         //DIVISION
-        public NumeroComplejo Dividir(ComplejoPolar complejo){
-            double modulo = this.modulo / complejo.GetModulo();
-            double argumento = this.argumento - complejo.GetArgumento();
+        public NumeroComplejo Dividir(NumeroComplejo complejo){
+            ComplejoPolar complejoPolar = complejo.ToPolar();
+            double modulo = this.modulo / complejoPolar.GetModulo();
+            double argumento = this.argumento - complejoPolar.GetArgumento();
             return new ComplejoBinomica( modulo, argumento );
         }
 

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ncom.model {
-
     class ComplejoBinomica : NumeroComplejo {
         private double real;
         private double imaginaria;
@@ -25,12 +24,16 @@ namespace ncom.model {
             return this;
         }
 
-
         //PASAJE A POLAR
         public ComplejoPolar ToPolar() {
             double modulo = this.CalcularModulo();
             double argumento = this.CalcularArgumento();
             return new ComplejoPolar(modulo, argumento);
+        }
+
+        override
+        public string ToString() {
+            return imaginaria >= 0 ? real + " + " + imaginaria + " j" : real + " " + imaginaria + " j";
         }
 
         private double CalcularModulo(){

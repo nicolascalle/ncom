@@ -10,7 +10,7 @@ namespace ncom {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Conversor());
+            Application.Run(new ui.Menu());
         }
     }
 }
