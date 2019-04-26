@@ -214,9 +214,9 @@
             this.labelResultadoCalculado.AutoSize = true;
             this.labelResultadoCalculado.Location = new System.Drawing.Point(148, 287);
             this.labelResultadoCalculado.Name = "labelResultadoCalculado";
-            this.labelResultadoCalculado.Size = new System.Drawing.Size(47, 17);
+            this.labelResultadoCalculado.Size = new System.Drawing.Size(50, 17);
             this.labelResultadoCalculado.TabIndex = 20;
-            this.labelResultadoCalculado.Text = "0 + 0 j";
+            this.labelResultadoCalculado.Text = "( 0, 0 )";
             // 
             // comboBoxFormaResultado
             // 
