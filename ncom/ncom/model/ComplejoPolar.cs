@@ -66,7 +66,7 @@ namespace ncom.model {
         public NumeroComplejo Multiplicar(ComplejoPolar complejo) {
             double modulo = this.modulo * complejo.GetModulo();
             double argumento = this.argumento + complejo.GetArgumento();
-            return new ComplejoBinomica( modulo   , argumento);
+            return new ComplejoPolar( modulo   , argumento);
         }
 
  
@@ -74,7 +74,7 @@ namespace ncom.model {
         public NumeroComplejo Dividir(ComplejoPolar complejo){
             double modulo = this.modulo / complejo.GetModulo();
             double argumento = this.argumento - complejo.GetArgumento();
-            return new ComplejoBinomica( modulo, argumento );
+            return new ComplejoPolar( modulo, argumento );
         }
 
 
