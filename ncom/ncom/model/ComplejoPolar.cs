@@ -69,7 +69,7 @@ namespace ncom.model {
             ComplejoPolar complejoPolar = complejo.ToPolar();
             double modulo = this.modulo * complejoPolar.GetModulo();
             double argumento = this.argumento + complejoPolar.GetArgumento();
-            return new ComplejoBinomica( modulo   , argumento);
+            return new ComplejoPolar( modulo, argumento);
         }
 
  
@@ -78,7 +78,7 @@ namespace ncom.model {
             ComplejoPolar complejoPolar = complejo.ToPolar();
             double modulo = this.modulo / complejoPolar.GetModulo();
             double argumento = this.argumento - complejoPolar.GetArgumento();
-            return new ComplejoBinomica( modulo, argumento );
+            return new ComplejoPolar( modulo, argumento );
         }
 
 
