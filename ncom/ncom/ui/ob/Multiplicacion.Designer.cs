@@ -62,9 +62,9 @@
             this.labelResultadoCalculado.AutoSize = true;
             this.labelResultadoCalculado.Location = new System.Drawing.Point(148, 285);
             this.labelResultadoCalculado.Name = "labelResultadoCalculado";
-            this.labelResultadoCalculado.Size = new System.Drawing.Size(47, 17);
+            this.labelResultadoCalculado.Size = new System.Drawing.Size(50, 17);
             this.labelResultadoCalculado.TabIndex = 52;
-            this.labelResultadoCalculado.Text = "0 + 0 j";
+            this.labelResultadoCalculado.Text = "( 0, 0 )";
             // 
             // labelForma
             // 
@@ -127,6 +127,7 @@
             this.comboBoxForma2.Name = "comboBoxForma2";
             this.comboBoxForma2.Size = new System.Drawing.Size(104, 24);
             this.comboBoxForma2.TabIndex = 46;
+            this.comboBoxForma2.SelectedIndexChanged += new System.EventHandler(this.comboBoxForma2_SelectedIndexChanged);
             // 
             // comboBoxForma1
             // 
@@ -139,6 +140,7 @@
             this.comboBoxForma1.Name = "comboBoxForma1";
             this.comboBoxForma1.Size = new System.Drawing.Size(104, 24);
             this.comboBoxForma1.TabIndex = 45;
+            this.comboBoxForma1.SelectedIndexChanged += new System.EventHandler(this.comboBoxForma1_SelectedIndexChanged);
             // 
             // numericInput22
             // 
@@ -178,6 +180,7 @@
             this.numericInput21.Name = "numericInput21";
             this.numericInput21.Size = new System.Drawing.Size(79, 22);
             this.numericInput21.TabIndex = 42;
+            this.numericInput21.ValueChanged += new System.EventHandler(this.numericInput21_ValueChanged);
             // 
             // numericInput11
             // 
@@ -191,6 +194,7 @@
             this.numericInput11.Name = "numericInput11";
             this.numericInput11.Size = new System.Drawing.Size(79, 22);
             this.numericInput11.TabIndex = 41;
+            this.numericInput11.ValueChanged += new System.EventHandler(this.numericInput11_ValueChanged);
             // 
             // buttonCalcular
             // 
@@ -201,10 +205,6 @@
             this.buttonCalcular.Text = "Calcular";
             this.buttonCalcular.UseVisualStyleBackColor = true;
             this.buttonCalcular.Click += new System.EventHandler(this.buttonCalcular_Click);
-            this.numericInput11.ValueChanged += new System.EventHandler(this.numericInput11_ValueChanged);
-            this.numericInput21.ValueChanged += new System.EventHandler(this.numericInput21_ValueChanged);
-            this.comboBoxForma1.SelectedIndexChanged += new System.EventHandler(this.comboBoxForma1_SelectedIndexChanged);
-            this.comboBoxForma2.SelectedIndexChanged += new System.EventHandler(this.comboBoxForma2_SelectedIndexChanged);
             // 
             // labelResultado
             // 

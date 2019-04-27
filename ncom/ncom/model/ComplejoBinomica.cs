@@ -33,7 +33,8 @@ namespace ncom.model {
 
         override
         public string ToString() {
-            return imaginaria >= 0 ? real + " + " + imaginaria + " j" : real + " " + imaginaria + " j";
+            return "( " + real + ", " + imaginaria + " )";
+            //return imaginaria >= 0 ? real + " + " + imaginaria + " j" : real + " " + imaginaria + " j";
         }
 
         private double CalcularModulo(){
@@ -74,8 +75,8 @@ namespace ncom.model {
         //RESTA
         public NumeroComplejo Restar(NumeroComplejo complejo) {
             ComplejoBinomica complejoBinomica = complejo.ToBinomica();
-            double modulo = complejoBinomica.GetReal() - this.real;
-            double argumento = complejoBinomica.GetImaginaria() - this.imaginaria;
+            double modulo = this.real - complejoBinomica.GetReal();
+            double argumento = this.imaginaria - complejoBinomica.GetImaginaria();
             return new ComplejoBinomica(modulo, argumento);  
         }
 

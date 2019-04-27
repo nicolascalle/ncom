@@ -90,7 +90,10 @@ namespace ncom.model {
         }
 
         private double CorregirArgumento(double argumento){
-            // si a alguien se le ocurre un nombre mejor para arg .. Binevenido
+            // si a alguien se le ocurre un nombre mejor para arg .. Binevenido  
+            //
+            // riBer podria ser?
+            //
             double arg = Math.Truncate(argumento / 2 * Math.PI);
             return argumento - arg * 2 * Math.PI;
         }
