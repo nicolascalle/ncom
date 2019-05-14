@@ -33,11 +33,11 @@
             this.buttonMultiplicacion = new System.Windows.Forms.Button();
             this.buttonDivision = new System.Windows.Forms.Button();
             this.buttonSumaDeFasores = new System.Windows.Forms.Button();
-            this.buttonRestaDeFasores = new System.Windows.Forms.Button();
             this.buttonPotencia = new System.Windows.Forms.Button();
             this.buttonRadicacionNatural = new System.Windows.Forms.Button();
             this.labelOperacionesAvanzadas = new System.Windows.Forms.Label();
             this.labelOperacionesConFasores = new System.Windows.Forms.Label();
+            this.buttonRaicesPrimitivas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelOperacionesBasicas
@@ -100,16 +100,6 @@
             this.buttonSumaDeFasores.UseVisualStyleBackColor = true;
             this.buttonSumaDeFasores.Click += new System.EventHandler(this.buttonSumaDeFasores_Click);
             // 
-            // buttonRestaDeFasores
-            // 
-            this.buttonRestaDeFasores.Location = new System.Drawing.Point(510, 116);
-            this.buttonRestaDeFasores.Name = "buttonRestaDeFasores";
-            this.buttonRestaDeFasores.Size = new System.Drawing.Size(140, 30);
-            this.buttonRestaDeFasores.TabIndex = 6;
-            this.buttonRestaDeFasores.Text = "Resta de fasores";
-            this.buttonRestaDeFasores.UseVisualStyleBackColor = true;
-            this.buttonRestaDeFasores.Click += new System.EventHandler(this.buttonRestaDeFasores_Click);
-            // 
             // buttonPotencia
             // 
             this.buttonPotencia.Location = new System.Drawing.Point(278, 80);
@@ -126,7 +116,7 @@
             this.buttonRadicacionNatural.Name = "buttonRadicacionNatural";
             this.buttonRadicacionNatural.Size = new System.Drawing.Size(140, 30);
             this.buttonRadicacionNatural.TabIndex = 8;
-            this.buttonRadicacionNatural.Text = "Radicacion natural";
+            this.buttonRadicacionNatural.Text = "Raíces naturales";
             this.buttonRadicacionNatural.UseVisualStyleBackColor = true;
             this.buttonRadicacionNatural.Click += new System.EventHandler(this.buttonRadicacionNatural_Click);
             // 
@@ -150,16 +140,26 @@
             this.labelOperacionesConFasores.TabIndex = 10;
             this.labelOperacionesConFasores.Text = "Operaciones con fasores";
             // 
+            // buttonRaicesPrimitivas
+            // 
+            this.buttonRaicesPrimitivas.Location = new System.Drawing.Point(278, 152);
+            this.buttonRaicesPrimitivas.Name = "buttonRaicesPrimitivas";
+            this.buttonRaicesPrimitivas.Size = new System.Drawing.Size(140, 30);
+            this.buttonRaicesPrimitivas.TabIndex = 11;
+            this.buttonRaicesPrimitivas.Text = "Raíces primitivas";
+            this.buttonRaicesPrimitivas.UseVisualStyleBackColor = true;
+            this.buttonRaicesPrimitivas.Click += new System.EventHandler(this.buttonRaicesPrimitivas_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 279);
+            this.Controls.Add(this.buttonRaicesPrimitivas);
             this.Controls.Add(this.labelOperacionesConFasores);
             this.Controls.Add(this.labelOperacionesAvanzadas);
             this.Controls.Add(this.buttonRadicacionNatural);
             this.Controls.Add(this.buttonPotencia);
-            this.Controls.Add(this.buttonRestaDeFasores);
             this.Controls.Add(this.buttonSumaDeFasores);
             this.Controls.Add(this.buttonDivision);
             this.Controls.Add(this.buttonMultiplicacion);
@@ -181,10 +181,10 @@
         private System.Windows.Forms.Button buttonMultiplicacion;
         private System.Windows.Forms.Button buttonDivision;
         private System.Windows.Forms.Button buttonSumaDeFasores;
-        private System.Windows.Forms.Button buttonRestaDeFasores;
         private System.Windows.Forms.Button buttonPotencia;
         private System.Windows.Forms.Button buttonRadicacionNatural;
         private System.Windows.Forms.Label labelOperacionesAvanzadas;
         private System.Windows.Forms.Label labelOperacionesConFasores;
+        private System.Windows.Forms.Button buttonRaicesPrimitivas;
     }
 }
