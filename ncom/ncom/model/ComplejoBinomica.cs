@@ -37,11 +37,11 @@ namespace ncom.model {
             //return imaginaria >= 0 ? real + " + " + imaginaria + " j" : real + " " + imaginaria + " j";
         }
 
-        private double CalcularModulo(){
+        public double CalcularModulo(){
             return Math.Round(Math.Sqrt(Math.Pow(real, 2) + Math.Pow(imaginaria, 2)), 3);
         }
 
-        private double CalcularArgumento(){
+        public double CalcularArgumento(){
             double argumento = Math.Atan2(imaginaria, real);
             return Math.Round(argumento + CorregirArgumento(), 3);
         }

@@ -102,7 +102,7 @@ namespace ncom.model {
         //RAICES N-ESIMAS
         public NumeroComplejo[] Raices_n_esimas(int indice) {
             int k = 0;
-            NumeroComplejo[] raicesComplejas = new NumeroComplejo[indice - 1];
+            NumeroComplejo[] raicesComplejas = new NumeroComplejo[indice];
             
             while (k < indice){  //Calculo cada raiz y las agrego al array.
                 double modulo = Math.Pow( this.modulo, 1 / indice );
