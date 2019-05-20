@@ -61,22 +61,23 @@ namespace ncom.model {
             return restaBinomica.ToPolar();   //Devulevo la suma convertida a polar
         }
 
-        
+
         //MULTIPLICACION
-        public NumeroComplejo Multiplicar(ComplejoPolar complejo) {
-            double modulo = this.modulo * complejo.GetModulo();
-            double argumento = this.argumento + complejo.GetArgumento();
-            return new ComplejoPolar( modulo   , argumento);
+        public NumeroComplejo Multiplicar(NumeroComplejo complejo){
+            ComplejoPolar complejoPolar = complejo.ToPolar();
+            double modulo = this.modulo * complejoPolar.GetModulo();
+            double argumento = this.argumento + complejoPolar.GetArgumento();
+            return new ComplejoPolar(modulo, argumento);
         }
 
- 
+
         //DIVISION
-        public NumeroComplejo Dividir(ComplejoPolar complejo){
-            double modulo = this.modulo / complejo.GetModulo();
-            double argumento = this.argumento - complejo.GetArgumento();
-            return new ComplejoPolar( modulo, argumento );
+        public NumeroComplejo Dividir(NumeroComplejo complejo){
+            ComplejoPolar complejoPolar = complejo.ToPolar();
+            double modulo = this.modulo / complejoPolar.GetModulo();
+            double argumento = this.argumento - complejoPolar.GetArgumento();
+            return new ComplejoPolar(modulo, argumento);
         }
-
 
         //POTENCIA
         public NumeroComplejo Potencia(int potencia) {
