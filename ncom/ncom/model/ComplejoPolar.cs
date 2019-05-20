@@ -101,7 +101,7 @@ namespace ncom.model {
             NumeroComplejo[] raicesComplejas = new NumeroComplejo[indice];
             
             while (k < indice){  //Calculo cada raiz y las agrego al array.
-                double modulo = Math.Pow( this.modulo, 1 / indice );
+                double modulo = Math.Pow( this.modulo, Math.Pow(indice,-1));
                 double argumento = (this.argumento + 2 * k * Math.PI) / indice;
                 raicesComplejas[k] = new ComplejoPolar( modulo, argumento );
                 k++;
