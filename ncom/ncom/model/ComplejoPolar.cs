@@ -65,19 +65,18 @@ namespace ncom.model {
 
         
         //MULTIPLICACION
-        public NumeroComplejo Multiplicar(NumeroComplejo complejo) {
-            ComplejoPolar complejoPolar = complejo.ToPolar();
-            double modulo = this.modulo * complejoPolar.GetModulo();
-            double argumento = this.argumento + complejoPolar.GetArgumento();
-            return new ComplejoPolar( modulo, argumento);
+
+        public NumeroComplejo Multiplicar(ComplejoPolar complejo) {
+            double modulo = this.modulo * complejo.GetModulo();
+            double argumento = this.argumento + complejo.GetArgumento();
+            return new ComplejoPolar( modulo   , argumento);
         }
 
  
         //DIVISION
-        public NumeroComplejo Dividir(NumeroComplejo complejo){
-            ComplejoPolar complejoPolar = complejo.ToPolar();
-            double modulo = this.modulo / complejoPolar.GetModulo();
-            double argumento = this.argumento - complejoPolar.GetArgumento();
+        public NumeroComplejo Dividir(ComplejoPolar complejo){
+            double modulo = this.modulo / complejo.GetModulo();
+            double argumento = this.argumento - complejo.GetArgumento();
             return new ComplejoPolar( modulo, argumento );
         }
 
