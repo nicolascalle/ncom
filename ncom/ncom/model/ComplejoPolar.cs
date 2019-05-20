@@ -15,8 +15,8 @@ namespace ncom.model {
         public void SetArgumento(double argumento) { this.argumento = argumento; }
 
         public ComplejoPolar(double modulo, double argumento) {
-            this.modulo = modulo;
-            this.argumento = argumento;
+            this.modulo = Math.Round(modulo, 3);
+            this.argumento = Math.Round(argumento, 3);
         }
 
         //PASAJE A BINOMICA
@@ -27,7 +27,7 @@ namespace ncom.model {
         }
 
         private double CalcularNumeroReal() {
-            return Math.Round(modulo * Math.Cos(argumento), 3); ;
+            return Math.Round(modulo * Math.Cos(argumento), 3);
         }
 
         private double CalcularNumeroImaginario() {
@@ -89,11 +89,7 @@ namespace ncom.model {
             return new ComplejoPolar( modulo , this.CorregirArgumento(argumento) );
         }
 
-        private double CorregirArgumento(double argumento){
-            // si a alguien se le ocurre un nombre mejor para arg .. Binevenido  
-            //
-            // riBer podria ser?
-            //
+        private double CorregirArgumento(double argumento) {
             double arg = Math.Truncate(argumento / 2 * Math.PI);
             return argumento - arg * 2 * Math.PI;
         }
@@ -102,7 +98,7 @@ namespace ncom.model {
         //RAICES N-ESIMAS
         public NumeroComplejo[] Raices_n_esimas(int indice) {
             int k = 0;
-            NumeroComplejo[] raicesComplejas = new NumeroComplejo[indice - 1];
+            NumeroComplejo[] raicesComplejas = new NumeroComplejo[indice];
             
             while (k < indice){  //Calculo cada raiz y las agrego al array.
                 double modulo = Math.Pow( this.modulo, 1 / indice );
@@ -118,9 +114,14 @@ namespace ncom.model {
         //RAICES PRIMITIVAS
         public NumeroComplejo[] RaicesPrimitivas(int indice){
             
-            NumeroComplejo[] raicesNesimas = this.Raices_n_esimas(indice);//Obtengo las raices n-esimas
-
             NumeroComplejo[] raicesPrimitivas = new NumeroComplejo[indice];
+
+            if (indice == 1) {
+                raicesPrimitivas[0] = new ComplejoPolar(1, 0);
+                return raicesPrimitivas;
+            }
+
+            NumeroComplejo[] raicesNesimas = this.Raices_n_esimas(indice);//Obtengo las raices n-esimas
 
             //La raiz sub0 no es primitiva, no la agrego 
 

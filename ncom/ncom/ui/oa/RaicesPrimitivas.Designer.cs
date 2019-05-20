@@ -145,7 +145,7 @@
             // 
             // buttonCalcular
             // 
-            this.buttonCalcular.Location = new System.Drawing.Point(294, 287);
+            this.buttonCalcular.Location = new System.Drawing.Point(334, 286);
             this.buttonCalcular.Name = "buttonCalcular";
             this.buttonCalcular.Size = new System.Drawing.Size(103, 30);
             this.buttonCalcular.TabIndex = 105;
@@ -180,7 +180,7 @@
             this.listViewResultado.Location = new System.Drawing.Point(147, 254);
             this.listViewResultado.MultiSelect = false;
             this.listViewResultado.Name = "listViewResultado";
-            this.listViewResultado.Size = new System.Drawing.Size(128, 97);
+            this.listViewResultado.Size = new System.Drawing.Size(165, 97);
             this.listViewResultado.TabIndex = 117;
             this.listViewResultado.UseCompatibleStateImageBehavior = false;
             this.listViewResultado.View = System.Windows.Forms.View.Details;

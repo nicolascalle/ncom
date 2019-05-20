@@ -23,8 +23,9 @@ namespace ncom.ui.oa {
             NumeroComplejo[] raicesComplejas = ObtenerPrimerComplejo().RaicesPrimitivas(ObtenerIndice());
 
             Array.ForEach(raicesComplejas, raiz => {
-                listViewResultado.Items.Add(new ListViewItem(raiz.ToString()));
-            });
+                    if(raiz != null)
+                        listViewResultado.Items.Add(new ListViewItem(raiz.ToString()));
+                });
         }
 
         private NumeroComplejo ObtenerPrimerComplejo() {
@@ -60,6 +61,8 @@ namespace ncom.ui.oa {
             this.listViewResultado.Columns.Add("Raices");
             this.listViewResultado.View = View.Details;
             this.listViewResultado.MultiSelect = false;
+            this.listViewResultado.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            this.listViewResultado.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
     }

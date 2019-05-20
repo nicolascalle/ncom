@@ -145,7 +145,7 @@
             // 
             // buttonCalcular
             // 
-            this.buttonCalcular.Location = new System.Drawing.Point(291, 286);
+            this.buttonCalcular.Location = new System.Drawing.Point(332, 287);
             this.buttonCalcular.Name = "buttonCalcular";
             this.buttonCalcular.Size = new System.Drawing.Size(103, 30);
             this.buttonCalcular.TabIndex = 90;
@@ -157,7 +157,7 @@
             // 
             this.labelResultado.AutoSize = true;
             this.labelResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResultado.Location = new System.Drawing.Point(35, 254);
+            this.labelResultado.Location = new System.Drawing.Point(38, 254);
             this.labelResultado.Name = "labelResultado";
             this.labelResultado.Size = new System.Drawing.Size(89, 18);
             this.labelResultado.TabIndex = 89;
@@ -177,7 +177,7 @@
             // 
             this.listViewResultado.Location = new System.Drawing.Point(146, 254);
             this.listViewResultado.Name = "listViewResultado";
-            this.listViewResultado.Size = new System.Drawing.Size(128, 97);
+            this.listViewResultado.Size = new System.Drawing.Size(165, 97);
             this.listViewResultado.TabIndex = 102;
             this.listViewResultado.UseCompatibleStateImageBehavior = false;
             // 
