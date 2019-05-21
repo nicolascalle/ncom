@@ -109,13 +109,7 @@ namespace ncom.model {
         public NumeroComplejo[] Raices_n_esimas(int indice) {
             ComplejoPolar numeroPolar = this.ToPolar(); //Convierto numero a polar
             NumeroComplejo[] raicesPolares = numeroPolar.Raices_n_esimas(indice); //Envio calculo a forma polar
-            NumeroComplejo[] raicesBinomicas = new NumeroComplejo[indice - 1];
-            int k = 0;
-            while (k < indice){
-                raicesBinomicas[k] = raicesPolares[k].ToBinomica(); //Reconvierto a binomica y le agrego al array
-                k++;
-            }
-            return raicesBinomicas;
+            return raicesPolares;
         }
 
 
@@ -123,13 +117,7 @@ namespace ncom.model {
         public NumeroComplejo[] RaicesPrimitivas(int indice){
             ComplejoPolar numeroPolar = this.ToPolar(); //Convierto numero a polar
             NumeroComplejo[] raicesPolares = numeroPolar.RaicesPrimitivas(indice); //Envio calculo a forma polar
-            NumeroComplejo[] raicesBinomicas = new NumeroComplejo[indice];
-            int k = 0;
-            while (raicesPolares[k] != null){
-                raicesBinomicas[k] = raicesPolares[k].ToBinomica(); //Reconvierto a binomica y le agrego al array
-                k++;
-            }
-            return raicesBinomicas;
+            return raicesPolares;
         }
     }
 }
