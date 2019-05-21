@@ -101,7 +101,6 @@ namespace ncom.model {
                 raicesComplejas[k] = new ComplejoPolar( modulo, argumento );
                 k++;
             }
-
             return raicesComplejas;
         }
 
