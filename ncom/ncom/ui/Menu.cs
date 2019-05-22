@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using ncom.ui.oa;
+using ncom.ui.sf;
 
 namespace ncom.ui {
     public partial class Menu : Form {
@@ -26,7 +27,7 @@ namespace ncom.ui {
         private void buttonRaicesPrimitivas_Click(object sender, EventArgs e) { new RaicesPrimitivas().Show(); }
 
         // Fasores
-        private void buttonSumaDeFasores_Click(object sender, EventArgs e) { }// new SumaDeFasores().Show(); }
+        private void buttonSumaDeFasores_Click(object sender, EventArgs e) { new SumaFasorial().Show(); }
 
     }
 }

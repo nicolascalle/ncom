@@ -44,7 +44,7 @@
             // 
             this.labelOperacionesBasicas.AutoSize = true;
             this.labelOperacionesBasicas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOperacionesBasicas.Location = new System.Drawing.Point(42, 43);
+            this.labelOperacionesBasicas.Location = new System.Drawing.Point(36, 43);
             this.labelOperacionesBasicas.Name = "labelOperacionesBasicas";
             this.labelOperacionesBasicas.Size = new System.Drawing.Size(167, 18);
             this.labelOperacionesBasicas.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             // buttonSuma
             // 
-            this.buttonSuma.Location = new System.Drawing.Point(56, 80);
+            this.buttonSuma.Location = new System.Drawing.Point(50, 80);
             this.buttonSuma.Name = "buttonSuma";
             this.buttonSuma.Size = new System.Drawing.Size(140, 30);
             this.buttonSuma.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // buttonResta
             // 
-            this.buttonResta.Location = new System.Drawing.Point(56, 116);
+            this.buttonResta.Location = new System.Drawing.Point(50, 116);
             this.buttonResta.Name = "buttonResta";
             this.buttonResta.Size = new System.Drawing.Size(140, 30);
             this.buttonResta.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // buttonMultiplicacion
             // 
-            this.buttonMultiplicacion.Location = new System.Drawing.Point(56, 152);
+            this.buttonMultiplicacion.Location = new System.Drawing.Point(50, 152);
             this.buttonMultiplicacion.Name = "buttonMultiplicacion";
             this.buttonMultiplicacion.Size = new System.Drawing.Size(140, 30);
             this.buttonMultiplicacion.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // buttonDivision
             // 
-            this.buttonDivision.Location = new System.Drawing.Point(56, 188);
+            this.buttonDivision.Location = new System.Drawing.Point(50, 188);
             this.buttonDivision.Name = "buttonDivision";
             this.buttonDivision.Size = new System.Drawing.Size(140, 30);
             this.buttonDivision.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             // buttonSumaDeFasores
             // 
-            this.buttonSumaDeFasores.Location = new System.Drawing.Point(510, 80);
+            this.buttonSumaDeFasores.Location = new System.Drawing.Point(504, 80);
             this.buttonSumaDeFasores.Name = "buttonSumaDeFasores";
             this.buttonSumaDeFasores.Size = new System.Drawing.Size(140, 30);
             this.buttonSumaDeFasores.TabIndex = 5;
@@ -102,7 +102,7 @@
             // 
             // buttonPotencia
             // 
-            this.buttonPotencia.Location = new System.Drawing.Point(278, 80);
+            this.buttonPotencia.Location = new System.Drawing.Point(272, 80);
             this.buttonPotencia.Name = "buttonPotencia";
             this.buttonPotencia.Size = new System.Drawing.Size(140, 30);
             this.buttonPotencia.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             // buttonRadicacionNatural
             // 
-            this.buttonRadicacionNatural.Location = new System.Drawing.Point(278, 116);
+            this.buttonRadicacionNatural.Location = new System.Drawing.Point(272, 116);
             this.buttonRadicacionNatural.Name = "buttonRadicacionNatural";
             this.buttonRadicacionNatural.Size = new System.Drawing.Size(140, 30);
             this.buttonRadicacionNatural.TabIndex = 8;
@@ -124,7 +124,7 @@
             // 
             this.labelOperacionesAvanzadas.AutoSize = true;
             this.labelOperacionesAvanzadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOperacionesAvanzadas.Location = new System.Drawing.Point(252, 43);
+            this.labelOperacionesAvanzadas.Location = new System.Drawing.Point(246, 43);
             this.labelOperacionesAvanzadas.Name = "labelOperacionesAvanzadas";
             this.labelOperacionesAvanzadas.Size = new System.Drawing.Size(189, 18);
             this.labelOperacionesAvanzadas.TabIndex = 9;
@@ -134,7 +134,7 @@
             // 
             this.labelOperacionesConFasores.AutoSize = true;
             this.labelOperacionesConFasores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOperacionesConFasores.Location = new System.Drawing.Point(479, 43);
+            this.labelOperacionesConFasores.Location = new System.Drawing.Point(473, 43);
             this.labelOperacionesConFasores.Name = "labelOperacionesConFasores";
             this.labelOperacionesConFasores.Size = new System.Drawing.Size(199, 18);
             this.labelOperacionesConFasores.TabIndex = 10;
@@ -142,7 +142,7 @@
             // 
             // buttonRaicesPrimitivas
             // 
-            this.buttonRaicesPrimitivas.Location = new System.Drawing.Point(278, 152);
+            this.buttonRaicesPrimitivas.Location = new System.Drawing.Point(272, 152);
             this.buttonRaicesPrimitivas.Name = "buttonRaicesPrimitivas";
             this.buttonRaicesPrimitivas.Size = new System.Drawing.Size(140, 30);
             this.buttonRaicesPrimitivas.TabIndex = 11;
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 279);
+            this.ClientSize = new System.Drawing.Size(713, 264);
             this.Controls.Add(this.buttonRaicesPrimitivas);
             this.Controls.Add(this.labelOperacionesConFasores);
             this.Controls.Add(this.labelOperacionesAvanzadas);

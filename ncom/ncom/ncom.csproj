@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="model\ComplejoBinomica.cs" />
     <Compile Include="model\ComplejoPolar.cs" />
+    <Compile Include="model\Fasor.cs" />
     <Compile Include="model\NumeroComplejo.cs" />
     <Compile Include="app\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +98,12 @@
     <Compile Include="ui\ob\Suma.Designer.cs">
       <DependentUpon>Suma.cs</DependentUpon>
     </Compile>
+    <Compile Include="ui\sf\SumaFasorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\sf\SumaFasorial.Designer.cs">
+      <DependentUpon>SumaFasorial.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -130,6 +137,9 @@
     <EmbeddedResource Include="ui\ob\Suma.resx">
       <DependentUpon>Suma.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ui\sf\SumaFasorial.resx">
+      <DependentUpon>SumaFasorial.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -143,9 +153,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ui\sf\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
