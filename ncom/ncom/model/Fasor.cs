@@ -24,6 +24,7 @@ namespace ncom.model {
 
         public Fasor(double amplitud, Funcion funcion, double frecuencia, double fase) {
             this.amplitud = amplitud;
+            this.frecuencia = frecuencia;
             this.funcion = funcion;
             this.fase = fase;
         }
@@ -46,7 +47,6 @@ namespace ncom.model {
             ComplejoBinomica binomica = new ComplejoBinomica(parteReal, parteImaginaria);
             double amplitud = binomica.ToPolar().GetModulo();
             double fase = binomica.ToPolar().GetArgumento();
-            double frecuencia = 0;
 
             return new Fasor(amplitud, Funcion.COS, frecuencia, fase);
         }       

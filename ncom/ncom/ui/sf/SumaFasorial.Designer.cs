@@ -39,14 +39,14 @@
             this.comboBoxFuncion1 = new System.Windows.Forms.ComboBox();
             this.comboBoxFuncion2 = new System.Windows.Forms.ComboBox();
             this.labelFase = new System.Windows.Forms.Label();
-            this.numericInputFrecuencia2 = new System.Windows.Forms.NumericUpDown();
             this.numericInputFase1 = new System.Windows.Forms.NumericUpDown();
+            this.numericInputFrecuencia2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericInputFase2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericInputFrecuencia1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericInputAmplitud2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericInputAmplitud1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericInputFrecuencia2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericInputFase1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericInputFrecuencia2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelResultadoCalculado
@@ -54,9 +54,9 @@
             this.labelResultadoCalculado.AutoSize = true;
             this.labelResultadoCalculado.Location = new System.Drawing.Point(144, 282);
             this.labelResultadoCalculado.Name = "labelResultadoCalculado";
-            this.labelResultadoCalculado.Size = new System.Drawing.Size(113, 17);
+            this.labelResultadoCalculado.Size = new System.Drawing.Size(112, 17);
             this.labelResultadoCalculado.TabIndex = 36;
-            this.labelResultadoCalculado.Text = "0 . sen ( 0.t + 0 )";
+            this.labelResultadoCalculado.Text = "0 . cos ( 0.t + 0 )";
             // 
             // labelFuncion
             // 
@@ -133,6 +133,7 @@
             this.numericInputFrecuencia1.Name = "numericInputFrecuencia1";
             this.numericInputFrecuencia1.Size = new System.Drawing.Size(79, 22);
             this.numericInputFrecuencia1.TabIndex = 27;
+            this.numericInputFrecuencia1.ValueChanged += new System.EventHandler(this.numericInputFrecuencia1_ValueChanged);
             // 
             // numericInputAmplitud2
             // 
@@ -224,19 +225,6 @@
             this.labelFase.TabIndex = 41;
             this.labelFase.Text = "Fase (Rad.)";
             // 
-            // numericInputFrecuencia2
-            // 
-            this.numericInputFrecuencia2.DecimalPlaces = 3;
-            this.numericInputFrecuencia2.Location = new System.Drawing.Point(351, 209);
-            this.numericInputFrecuencia2.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.numericInputFrecuencia2.Name = "numericInputFrecuencia2";
-            this.numericInputFrecuencia2.Size = new System.Drawing.Size(79, 22);
-            this.numericInputFrecuencia2.TabIndex = 40;
-            // 
             // numericInputFase1
             // 
             this.numericInputFase1.DecimalPlaces = 3;
@@ -249,6 +237,20 @@
             this.numericInputFase1.Name = "numericInputFase1";
             this.numericInputFase1.Size = new System.Drawing.Size(79, 22);
             this.numericInputFase1.TabIndex = 39;
+            // 
+            // numericInputFrecuencia2
+            // 
+            this.numericInputFrecuencia2.DecimalPlaces = 3;
+            this.numericInputFrecuencia2.Location = new System.Drawing.Point(351, 209);
+            this.numericInputFrecuencia2.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.numericInputFrecuencia2.Name = "numericInputFrecuencia2";
+            this.numericInputFrecuencia2.Size = new System.Drawing.Size(79, 22);
+            this.numericInputFrecuencia2.TabIndex = 40;
+            this.numericInputFrecuencia2.ValueChanged += new System.EventHandler(this.numericInputFrecuencia2_ValueChanged);
             // 
             // SumaFasorial
             // 
@@ -279,8 +281,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericInputFrecuencia1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericInputAmplitud2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericInputAmplitud1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericInputFrecuencia2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericInputFase1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericInputFrecuencia2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,7 +305,7 @@
         private System.Windows.Forms.ComboBox comboBoxFuncion1;
         private System.Windows.Forms.ComboBox comboBoxFuncion2;
         private System.Windows.Forms.Label labelFase;
-        private System.Windows.Forms.NumericUpDown numericInputFrecuencia2;
         private System.Windows.Forms.NumericUpDown numericInputFase1;
+        private System.Windows.Forms.NumericUpDown numericInputFrecuencia2;
     }
 }

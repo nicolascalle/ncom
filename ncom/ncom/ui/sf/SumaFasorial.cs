@@ -41,5 +41,16 @@ namespace ncom.ui.sf {
             comboBoxFuncion2.SelectedIndex = 0;
         }
 
+        private void numericInputFrecuencia2_ValueChanged(object sender, EventArgs e) {
+            if (!numericInputFrecuencia2.ReadOnly)
+                numericInputFrecuencia1.ReadOnly = true;
+            numericInputFrecuencia1.Value = numericInputFrecuencia2.Value;
+        }
+
+        private void numericInputFrecuencia1_ValueChanged(object sender, EventArgs e) {
+            if(!numericInputFrecuencia1.ReadOnly)
+                numericInputFrecuencia2.ReadOnly = true;
+            numericInputFrecuencia2.Value = numericInputFrecuencia1.Value;
+        }
     }
 }
