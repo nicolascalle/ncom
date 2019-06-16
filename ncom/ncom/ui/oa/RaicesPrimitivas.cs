@@ -65,5 +65,8 @@ namespace ncom.ui.oa {
             this.listViewResultado.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
+        private void numericUpDownIndice_ValueChanged(object sender, EventArgs e) {
+            if (numericUpDownIndice.Value < 2) numericUpDownIndice.Value = 2;
+        }
     }
 }

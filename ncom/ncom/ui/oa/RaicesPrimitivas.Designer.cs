@@ -48,10 +48,11 @@
             this.numericUpDownIndice.Size = new System.Drawing.Size(66, 22);
             this.numericUpDownIndice.TabIndex = 115;
             this.numericUpDownIndice.Value = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
+            this.numericUpDownIndice.ValueChanged += new System.EventHandler(this.numericUpDownIndice_ValueChanged);
             // 
             // labelIndice
             // 
